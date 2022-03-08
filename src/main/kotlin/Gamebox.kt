@@ -35,7 +35,7 @@ object Gamebox : KotlinPlugin(
                         val result:String
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val body:RequestBody=RequestBody.create(JSON,"{\"name\":\"${name}\"}")
-                        val request = Request.Builder().post(body).url("http://localhost:8800/game/select").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/game/select").build()
                         val response = client.newCall(request).execute()
                         result=response.body?.string().toString()
                         val jsclass= Gson().fromJson(result,GameResultBack::class.java)
@@ -237,7 +237,7 @@ object Gamebox : KotlinPlugin(
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val insertUser=InsertUser(qq=sender.id.toString(), qq_group = sender.group.id.toString(), point = 10)
                         val body:RequestBody=RequestBody.create(JSON,Gson().toJson(insertUser))
-                        val request = Request.Builder().post(body).url("http://localhost:8800/user/insert").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/user/insert").build()
                         val response = client.newCall(request).execute()
                         result=response.body?.string().toString()
                         val jsclass= Gson().fromJson(result,InsertUserBack::class.java)
@@ -287,7 +287,7 @@ object Gamebox : KotlinPlugin(
                         val result:String
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val body:RequestBody=RequestBody.create(JSON,"{\"qq\":\"${sender.id}\"}")
-                        val request = Request.Builder().post(body).url("http://localhost:8800/user/signin").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/user/signin").build()
                         val response = client.newCall(request).execute()
                         result=response.body?.string().toString()
                         val jsclass= Gson().fromJson(result,SignInBack::class.java)
@@ -329,7 +329,7 @@ object Gamebox : KotlinPlugin(
                         val result:String
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val body:RequestBody=RequestBody.create(JSON,"{\"qq\":\"${sender.id}\"}")
-                        val request = Request.Builder().post(body).url("http://localhost:8800/user/select").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/user/select").build()
                         val response = client.newCall(request).execute()
                         result=response.body?.string().toString()
                         val jsclass= Gson().fromJson(result,UserBack::class.java)
@@ -390,7 +390,7 @@ object Gamebox : KotlinPlugin(
                                     val result:String
                                     val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                                     val body:RequestBody=RequestBody.create(JSON,"")
-                                    val request = Request.Builder().post(body).url("http://localhost:8800/hgame/random").build()
+                                    val request = Request.Builder().post(body).url("http://114.55.247.45:8800/hgame/random").build()
                                     val response = client.newCall(request).execute()
                                     result=response.body?.string().toString()
                                     val jsclass= Gson().fromJson(result,HGameBack::class.java)
@@ -461,7 +461,7 @@ object Gamebox : KotlinPlugin(
                                     val result:String
                                     val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                                     val body:RequestBody=RequestBody.create(JSON,"{\"name\":\"${name}\"}")
-                                    val request = Request.Builder().post(body).url("http://localhost:8800/hgame/select").build()
+                                    val request = Request.Builder().post(body).url("http://114.55.247.45:8800/hgame/select").build()
                                     val response = client.newCall(request).execute()
                                     result=response.body?.string().toString()
                                     val jsclass= Gson().fromJson(result,GameResultBack::class.java)
@@ -515,7 +515,7 @@ object Gamebox : KotlinPlugin(
                         val result: String
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val body: RequestBody = RequestBody.create(JSON, Gson().toJson(insertShare))
-                        val request = Request.Builder().post(body).url("http://localhost:8800/share/insert").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/share/insert").build()
                         val response = client.newCall(request).execute()
                         result = response.body?.string().toString()
                         val jsclass = Gson().fromJson(result, SignInBack::class.java)
@@ -543,7 +543,7 @@ object Gamebox : KotlinPlugin(
                         val result:String
                         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
                         val body:RequestBody=RequestBody.create(JSON,"{\"name\":\"${name}\"}")
-                        val request = Request.Builder().post(body).url("http://localhost:8800/share/select").build()
+                        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/share/select").build()
                         val response = client.newCall(request).execute()
                         result=response.body?.string().toString()
                         val jsclass= Gson().fromJson(result,ShareGameBack::class.java)
