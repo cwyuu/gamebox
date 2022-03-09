@@ -13,7 +13,7 @@ class UpdateUser {
         val result:String
         val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
         val body: RequestBody = RequestBody.create(JSON,Gson().toJson(updateUserParam))
-        val request = Request.Builder().post(body).url("http://localhost:8800/user/update").build()
+        val request = Request.Builder().post(body).url("http://114.55.247.45:8800/user/update").build()
         val response = client.newCall(request).execute()
         result=response.body?.string().toString()
         val jsclass= Gson().fromJson(result,SignInBack::class.java)
